@@ -30,19 +30,19 @@ class ConvertorHomePage extends StatefulWidget {
 }
 
 class _ConvertorHomePageState extends State<ConvertorHomePage> {
-  String _resultMessage = "";
-  String _validationMessage = "";
+  String _resultMessage = '';
+  String _validationMessage = '';
 
   final TextEditingController sumController = TextEditingController();
 
   void _showConversion() {
     setState(() {
       if (sumController.text.isEmpty) {
-        _validationMessage = "Please enter a valid number";
-        _resultMessage = "";
+        _validationMessage = 'Please enter a valid number';
+        _resultMessage = '';
       } else {
-        _validationMessage = "";
-        var result = (double.parse(sumController.text) * 4.9).toStringAsFixed(
+        _validationMessage = '';
+        final String result = (double.parse(sumController.text) * 4.9).toStringAsFixed(
             2);
         _resultMessage = '$result RON';
       }
@@ -61,7 +61,6 @@ class _ConvertorHomePageState extends State<ConvertorHomePage> {
 
         child: Column(
 
-          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Image.asset('assets/images/money.jpg'),
             TextFormField(
@@ -77,7 +76,7 @@ class _ConvertorHomePageState extends State<ConvertorHomePage> {
             TextButton(
               onPressed: _showConversion,
 
-              child: const Text("CONVERT",
+              child: const Text('CONVERT',
                   style: TextStyle(fontSize: 20))
             ),
 
